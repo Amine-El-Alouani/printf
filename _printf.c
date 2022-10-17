@@ -10,15 +10,17 @@ int _printf(const char *format, ...)
 {
 	int i;
 	int value;
+	char *val;
 	int count = 0;
 	va_list ptr;
+
 	va_start(ptr, format);
 
-    	for (i = 0; format[i] != '\0'; i++)
-    	{
-		if (format[i] == '%')
+	for (i = 0; format[i] != '\0'; i++)
 	{
-		switch (format[i+1])
+		if (format[i] == '%')
+		{
+		switch (format[i + 1])
 		{
 			case ('d'):
 				value = va_arg(ptr, int);
@@ -28,6 +30,9 @@ int _printf(const char *format, ...)
 				value = va_arg(ptr, int);
 				integer(value);
 				break;
+			case ('s'):
+				val = va_arg(ptr, char *);
+				string(val);
 		}
 		i  = i + 2;
 	}

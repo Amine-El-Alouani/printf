@@ -7,6 +7,7 @@
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
+
 int _putchar(char c)
 {
 	return (write(1, &c, 1));
@@ -32,4 +33,31 @@ void integer(int value)
 	}
 
 	_putchar(value % 10 + '0');
+}
+
+/**
+ * string - void func
+ * @str: param
+ * Return: nothing
+ */
+
+
+void string(char *str)
+{
+	int i = 0, f;
+
+	if (str == NULL)
+	{
+		return;
+	}
+
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+
+	for (f = 0; f < i; f++)
+	{
+		_putchar(str[f]);
+	}
 }
