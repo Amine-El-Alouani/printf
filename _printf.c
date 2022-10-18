@@ -11,6 +11,7 @@ int _printf(const char *format, ...)
 	int i;
 	int value;
 	char *val;
+	char vall;
 	int count = 0;
 	va_list ptr;
 
@@ -18,7 +19,7 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 	{
-		return (0);
+		return (-1);
 	}
 
 	for (i = 0; format[i] != '\0'; i++)
@@ -38,6 +39,18 @@ int _printf(const char *format, ...)
 			case ('s'):
 				val = va_arg(ptr, char *);
 				string(val);
+				break;
+			case ('%'):
+				_putchar('%');
+				break;
+			case('c'):
+				vall = (char) va_arg(ptr, int);
+				_putchar(vall);
+				break;
+			default:
+				i -= 1;
+
+
 		}
 		i  = i + 2;
 	}
