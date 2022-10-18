@@ -44,20 +44,28 @@ void integer(int value)
 
 void string(char *str)
 {
-	int i = 0, f;
+	int i = 0, f, j;
 
-	if (str == NULL)
+	if (!str)
 	{
-		return;
+		char *error = "(null)";
+		
+		for (j = 0; error[j] != '\0'; j++)
+		{
+			_putchar(error[j]);
+		}
+		_putchar('\n');
 	}
-
-	while (str[i] != '\0')
+	else
 	{
-		i++;
-	}
+		while (str[i] != '\0')
+		{
+			i++;
+		}	
 
-	for (f = 0; f < i; f++)
-	{
-		_putchar(str[f]);
+		for (f = 0; f < i; f++)
+		{
+			_putchar(str[f]);
+		}
 	}
 }
