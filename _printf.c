@@ -15,8 +15,7 @@ int _printf(const char *format, ...)
 	int length;
 	int count = 0;
 	va_list ptr;
-
-	length = strlen(format);
+    length = strlen(format);
 	va_start(ptr, format);
 
 	if (format == NULL)
@@ -24,7 +23,7 @@ int _printf(const char *format, ...)
 		return (-1);
 	}
 
-	for (i = 0; i < length; i++)
+	for (i = 0; i< length; i++)
 	{
 		if (format[i] == '%')
 		{
@@ -60,8 +59,8 @@ int _printf(const char *format, ...)
 		i  = i + 2;
 	}
 		if (i < length)
-		_putchar(format[i]);
+			_putchar(format[i]);
 		count++;
-	}
+    }
 	return (count - 1);
 }
