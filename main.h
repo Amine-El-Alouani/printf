@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
+int count_integer(int);
 int _printf(const char *format, ...);
 int _putchar(char c);
 void integer(int value);
