@@ -15,7 +15,8 @@ int _printf(const char *format, ...)
 	int length;
 	int count = 0;
 	va_list ptr;
-    length = strlen(format);
+	
+	length = strlen(format);
 	va_start(ptr, format);
 
 	if (format == NULL)
@@ -23,7 +24,7 @@ int _printf(const char *format, ...)
 		return (-1);
 	}
 
-	for (i = 0; i< length; i++)
+	for (i = 0; i < length; i++)
 	{
 		if (format[i] == '%')
 		{
@@ -41,7 +42,7 @@ int _printf(const char *format, ...)
 				break;
 			case ('s'):
 				val = va_arg(ptr, char *);
-				count += strlen(val);
+				count += strlen(val) - 1;
 				string(val);
 				break;
 			case ('%'):
@@ -54,8 +55,6 @@ int _printf(const char *format, ...)
 				break;
 			default:
 				i -= 1;
-
-
 		}
 		i  = i + 2;
 	}
