@@ -13,6 +13,21 @@ int _putchar(char c)
 	return (write(1, &c, 1));
 }
 
+int count_integer(int n)                                                                                                                
+{                                                                                                                                       
+            int i = 0;                                                                                                                  
+            if (n < 0)                                                                                                                  
+            {                                                                                                                           
+                    i++;                                                                                                                
+            }                                                                                                                           
+            while(n / 10)                                                                                                               
+            {                                                                                                                           
+                    n = n/10;                                                                                                           
+                    i++;                                                                                                                
+            }                                                                                                                           
+            return(i+1);                                                                                                                
+                                                                                                                                        
+}   
 /**
  * integer - void func
  * @value: param
