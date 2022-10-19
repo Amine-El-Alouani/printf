@@ -49,6 +49,7 @@ int _printf(const char *format, ...)
 				break;
 			case('c'):
 				vall = (char) va_arg(ptr, int);
+				count++;
 				_putchar(vall);
 				break;
 			default:
