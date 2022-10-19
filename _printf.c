@@ -16,6 +16,7 @@ int _printf(const char *format, ...)
 	int count = 0;
 	va_list ptr;
 
+	length = strlen(format);
 	va_start(ptr, format);
 
 	if (format == NULL)
