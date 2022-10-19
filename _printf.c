@@ -32,10 +32,12 @@ int _printf(const char *format, ...)
 		{
 			case ('d'):
 				value = va_arg(ptr, int);
+				count +=(value==0)?1:log10(value)+1;
 				integer(value);
 				break;
 			case ('i'):
 				value = va_arg(ptr, int);
+				count +=(value==0)?1:log10(value)+1;
 				integer(value);
 				break;
 			case ('s'):
@@ -58,10 +60,8 @@ int _printf(const char *format, ...)
 		i  = i + 2;
 	}
 		if (i < length)
-		{
 		_putchar(format[i]);
 		count++;
-		}
 	}
 	return (count - 1);
 }
